@@ -37,4 +37,4 @@ def RunCommand( is_interactive ):
         print "Success"
     return 0
 
-#RunCommand(True)
+RunCommand(True)

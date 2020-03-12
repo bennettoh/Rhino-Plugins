@@ -1,11 +1,14 @@
+from Rhino.Input.Custom import *
 import rhinoscriptsyntax as rs
 import random
 
 __commandname__ = "RandomMove"
 
 def RunCommand( is_interactive ):
-
-    objs = rs.GetObjects("Select objects to move")
+    go = GetObject()
+    go.SetCommandPrompt("Select objects to move randomly")
+    go.GetMultiple(1, 0)
+    objs = go.Objects() #stores objref
     
     if objs:
         start = rs.GetPoint("Point to move from")

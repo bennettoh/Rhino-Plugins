@@ -14,12 +14,12 @@ def RunCommand( is_interactive ):
         for obj in objs:
             object = obj.Object()
             if(str(object.ObjectType) == "InstanceReference"):
-                print "issa block"
+#                print "issa block"
 #                point = rs.SurfaceAreaCentroid(obj.Geometry.Id)[0]
                 point = rs.BlockInstanceInsertPoint(obj)
                 rs.RotateObject(obj, point, random.random() * 360, None, copy=False)
             else:
-                print "issa obj"
+#                print "issa obj"
                 rotateObj(obj)
     return 0
 
